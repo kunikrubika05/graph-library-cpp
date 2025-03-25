@@ -45,6 +45,16 @@ add_executable(run_dijkstra_faster tests/tests_dijkstra/test_dijsktra_faster.cpp
 add_executable(run_floyd_base tests/tests_floyd/test_base.cpp)
 add_executable(run_transitive_closure_metrics_neg_cycle tests/tests_floyd/test_transitive_closure_metrics_negative_cycle.cpp)
 
+#Bellman Ford tests
+add_executable(run_bellman_ford_base tests/tests_bellman_ford/test_base.cpp)
+add_executable(run_bellman_ford_advanced tests/tests_bellman_ford/test_advanced.cpp)
+
+#MST tests
+add_executable(run_mst_kruskal_base tests/tests_mst/test_kruskal.cpp)
+add_executable(run_mst_kruskal_advanced tests/tests_mst/test_kruskal_advanced.cpp)
+add_executable(run_mst_prim_base tests/tests_mst/test_prim.cpp)
+add_executable(run_mst_prim_advanced tests/tests_mst/test_prim_advanced.cpp)
+
 #structure tests
 target_link_libraries(run_dir_adj_list PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 target_link_libraries(run_un_dir_adj_list PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
@@ -80,6 +90,16 @@ target_link_libraries(run_dijkstra_faster PRIVATE graph_analysis GTest::GTest GT
 target_link_libraries(run_floyd_base PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 target_link_libraries(run_transitive_closure_metrics_neg_cycle PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 
+#Bellman Ford tests
+target_link_libraries(run_bellman_ford_base PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_bellman_ford_advanced PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+
+#MST tests
+target_link_libraries(run_mst_kruskal_base PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_mst_kruskal_advanced PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_mst_prim_base PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_mst_prim_advanced PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+
 #structure tests
 add_test(NAME dir_adj_list COMMAND run_un_dir_adj_list)
 add_test(NAME un_dir_adj_list COMMAND run_un_dir_adj_list)
@@ -114,3 +134,13 @@ add_test(NAME dijkstra_faster COMMAND run_dijkstra_faster)
 #Floyd tests
 add_test(NAME floyd_base COMMAND run_floyd_base)
 add_test(NAME transitive_closure_metrics_neg_cycle COMMAND run_transitive_closure_metrics_neg_cycle)
+
+#Bellman Ford tests
+add_test(NAME bellman_ford_base COMMAND run_bellman_ford_base)
+add_test(NAME bellman_ford_advanced COMMAND run_bellman_ford_advanced)
+
+#MST tests
+add_test(NAME mst_kruskal_base COMMAND run_mst_kruskal_base)
+add_test(NAME mst_kruskal_advanced COMMAND run_mst_kruskal_advanced)
+add_test(NAME mst_prim_base COMMAND run_mst_prim_base)
+add_test(NAME mst_prim_advanced COMMAND run_mst_prim_advanced)
