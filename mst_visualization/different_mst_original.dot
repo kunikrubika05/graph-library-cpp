@@ -1,0 +1,34 @@
+graph G {
+  // Graph settings
+  graph [fontname="Arial", rankdir=LR];
+  node [fontname="Arial", shape=circle, style=filled, fillcolor=lightblue];
+  edge [fontname="Arial"];
+
+  // Vertices
+  "1";
+  "2";
+  "3";
+  "4";
+  "5";
+  "6";
+  "7";
+  "8";
+
+  // Edges
+  "1" -- "2" [label="1"];
+  "1" -- "3" [label="5"];
+  "1" -- "5" [label="2"];
+  "1" -- "8" [label="1"];
+  "2" -- "3" [label="1"];
+  "2" -- "4" [label="5"];
+  "2" -- "6" [label="2"];
+  "3" -- "4" [label="1"];
+  "3" -- "7" [label="2"];
+  "4" -- "5" [label="1"];
+  "4" -- "8" [label="2"];
+  "5" -- "6" [label="1"];
+  "5" -- "7" [label="5"];
+  "6" -- "7" [label="1"];
+  "6" -- "8" [label="5"];
+  "7" -- "8" [label="1"];
+}

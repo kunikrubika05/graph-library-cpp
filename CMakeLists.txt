@@ -55,6 +55,26 @@ add_executable(run_mst_kruskal_advanced tests/tests_mst/test_kruskal_advanced.cp
 add_executable(run_mst_prim_base tests/tests_mst/test_prim.cpp)
 add_executable(run_mst_prim_advanced tests/tests_mst/test_prim_advanced.cpp)
 
+#Visualizer tests
+add_executable(run_visualizer_base include/graph/visualization/test_graph_export.cpp)
+add_executable(run_visualizer_s_g_i include/graph/visualization/save_graph_image.cpp)
+add_executable(run_visualizer_friends include/graph/visualization/friends.cpp)
+add_executable(run_visualizer_friends_multigraph include/graph/visualization/friends_multigraph.cpp)
+
+add_executable(run_visualizer_mst include/graph/visualization/mst_visualization.cpp)
+add_executable(run_visualizer_mst_comparison include/graph/visualization/mst_comparison_visualization.cpp)
+add_executable(run_visualizer_mst_comparison_2 include/graph/visualization/mst_comparison_visualization_2.cpp)
+
+#Flow tests
+add_executable(run_flow_ford_fulkerson tests/tests_flow/test_ford_fulkerson.cpp)
+add_executable(run_flow_edmonds_karp tests/tests_flow/test_edmonds_karp.cpp)
+add_executable(run_flow_dinic tests/tests_flow/test_dinic.cpp)
+
+#matching tests
+add_executable(run_matching_kuhn tests/tests_matching/test_kuhn.cpp)
+add_executable(run_matching_hopcroft_karp tests/tests_matching/test_hopcroft_karp.cpp)
+add_executable(run_matching_edmonds tests/tests_matching/test_edmonds.cpp)
+
 #structure tests
 target_link_libraries(run_dir_adj_list PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 target_link_libraries(run_un_dir_adj_list PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
@@ -100,6 +120,26 @@ target_link_libraries(run_mst_kruskal_advanced PRIVATE graph_analysis GTest::GTe
 target_link_libraries(run_mst_prim_base PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 target_link_libraries(run_mst_prim_advanced PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 
+#Visualizer tests
+target_link_libraries(run_visualizer_base PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_visualizer_s_g_i PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_visualizer_friends PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_visualizer_friends_multigraph PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+
+target_link_libraries(run_visualizer_mst PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_visualizer_mst_comparison PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_visualizer_mst_comparison_2 PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+
+#Flow tests
+target_link_libraries(run_flow_ford_fulkerson PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_flow_edmonds_karp PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_flow_dinic PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+
+#matching tests
+target_link_libraries(run_matching_kuhn PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_matching_hopcroft_karp PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_matching_edmonds PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+
 #structure tests
 add_test(NAME dir_adj_list COMMAND run_un_dir_adj_list)
 add_test(NAME un_dir_adj_list COMMAND run_un_dir_adj_list)
@@ -144,3 +184,23 @@ add_test(NAME mst_kruskal_base COMMAND run_mst_kruskal_base)
 add_test(NAME mst_kruskal_advanced COMMAND run_mst_kruskal_advanced)
 add_test(NAME mst_prim_base COMMAND run_mst_prim_base)
 add_test(NAME mst_prim_advanced COMMAND run_mst_prim_advanced)
+
+#Visualizer tests
+add_test(NAME visualizer_base COMMAND run_visualizer_base)
+add_test(NAME visualizer_s_g_i COMMAND run_visualizer_s_g_i)
+add_test(NAME visualizer_friends COMMAND run_visualizer_friends)
+add_test(NAME visualizer_friends_multigraph COMMAND run_visualizer_friends_multigraph)
+
+add_test(NAME visualizer_mst COMMAND run_visualizer_mst)
+add_test(NAME visualizer_mst_comparison COMMAND run_visualizer_mst_comparison)
+add_test(NAME visualizer_mst_comparison_2 COMMAND run_visualizer_mst_comparison)
+
+#Flow tests
+add_test(NAME flow_ford_fulkerson COMMAND run_flow_ford_fulkerson)
+add_test(NAME flow_edmonds_karp COMMAND run_flow_edmonds_karp)
+add_test(NAME flow_dinic COMMAND run_flow_dinic)
+
+#matching tests
+add_test(NAME matching_kuhn COMMAND run_matching_kuhn)
+add_test(NAME matching_hopcroft_karp COMMAND run_matching_hopcroft_karp)
+add_test(NAME matching_edmonds COMMAND run_matching_edmonds)

@@ -1,0 +1,54 @@
+graph G {
+  // Graph settings
+  graph [fontname="Arial", rankdir=LR, splines=true];
+  node [fontname="Arial", shape=circle, style=filled, fillcolor=lightblue];
+  edge [fontname="Arial"];
+
+  // Legend
+  subgraph cluster_legend {
+    label="Легенда";
+    style=filled;
+    color=lightgrey;
+    fontsize=14;
+    "Обычное ребро" [shape=plaintext, label="Обычное ребро", fillcolor=white];
+    "MST Крускала" [shape=plaintext, label="MST Крускала", fillcolor=white];
+    "MST Прима" [shape=plaintext, label="MST Прима", fillcolor=white];
+    "Общие рёбра" [shape=plaintext, label="Общие рёбра MST", fillcolor=white];
+    "Обычное ребро" -- "MST Крускала" [style=dashed, color=grey];
+    "MST Крускала" -- "MST Прима" [color=red, penwidth=2.0];
+    "MST Прима" -- "Общие рёбра" [color=blue, penwidth=2.0];
+    "Общие рёбра" -- "Обычное ребро" [color=purple, penwidth=3.0];
+  }
+
+  // Vertices
+  "Владивосток";
+  "Екатеринбург";
+  "Казань";
+  "Калининград";
+  "Красноярск";
+  "Москва";
+  "Новосибирск";
+  "Санкт-Петербург";
+  "Сочи";
+
+  // Edges
+  "Владивосток" -- "Красноярск" [label="4500", color=purple, penwidth=3.0];
+  "Владивосток" -- "Новосибирск" [label="5800", style=dashed, color=grey];
+  "Владивосток" -- "Сочи" [label="9000", style=dashed, color=grey];
+  "Екатеринбург" -- "Казань" [label="1000", color=purple, penwidth=3.0];
+  "Екатеринбург" -- "Красноярск" [label="2000", style=dashed, color=grey];
+  "Екатеринбург" -- "Москва" [label="1800", style=dashed, color=grey];
+  "Екатеринбург" -- "Новосибирск" [label="1500", color=purple, penwidth=3.0];
+  "Екатеринбург" -- "Сочи" [label="2500", style=dashed, color=grey];
+  "Казань" -- "Калининград" [label="1600", style=dashed, color=grey];
+  "Казань" -- "Москва" [label="800", color=purple, penwidth=3.0];
+  "Казань" -- "Санкт-Петербург" [label="1500", style=dashed, color=grey];
+  "Казань" -- "Сочи" [label="2100", style=dashed, color=grey];
+  "Калининград" -- "Москва" [label="1200", style=dashed, color=grey];
+  "Калининград" -- "Санкт-Петербург" [label="800", color=purple, penwidth=3.0];
+  "Красноярск" -- "Новосибирск" [label="800", color=purple, penwidth=3.0];
+  "Москва" -- "Санкт-Петербург" [label="700", color=purple, penwidth=3.0];
+  "Москва" -- "Сочи" [label="1600", color=purple, penwidth=3.0];
+  "Новосибирск" -- "Сочи" [label="4000", style=dashed, color=grey];
+  "Санкт-Петербург" -- "Сочи" [label="2300", style=dashed, color=grey];
+}

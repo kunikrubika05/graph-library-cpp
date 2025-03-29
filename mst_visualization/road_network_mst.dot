@@ -1,0 +1,29 @@
+graph G {
+  // Graph settings
+  graph [fontname="Arial", rankdir=LR];
+  node [fontname="Arial", shape=circle, style=filled, fillcolor=lightblue];
+  edge [fontname="Arial"];
+
+  // Vertices
+  "Владивосток";
+  "Екатеринбург";
+  "Казань";
+  "Москва";
+  "Новосибирск";
+  "Санкт-Петербург";
+  "Сочи";
+
+  // Edges
+  "Владивосток" -- "Новосибирск" [label="5800", color=red, penwidth=3.0];
+  "Владивосток" -- "Сочи" [label="9000"];
+  "Екатеринбург" -- "Казань" [label="1000", color=red, penwidth=3.0];
+  "Екатеринбург" -- "Москва" [label="1800"];
+  "Екатеринбург" -- "Новосибирск" [label="1500", color=red, penwidth=3.0];
+  "Екатеринбург" -- "Сочи" [label="2500"];
+  "Казань" -- "Москва" [label="800", color=red, penwidth=3.0];
+  "Казань" -- "Санкт-Петербург" [label="1500"];
+  "Москва" -- "Санкт-Петербург" [label="700", color=red, penwidth=3.0];
+  "Москва" -- "Сочи" [label="1600", color=red, penwidth=3.0];
+  "Новосибирск" -- "Сочи" [label="4000"];
+  "Санкт-Петербург" -- "Сочи" [label="2300"];
+}
