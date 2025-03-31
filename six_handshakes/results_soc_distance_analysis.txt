@@ -1,0 +1,155 @@
+Analyzing six degrees of separation on Facebook graph
+Loading graph from ../datasets/socfb-A-anon/socfb-A-anon.mtx
+File header: %MatrixMarket matrix coordinate pattern symmetric
+Graph dimensions: vertices=3097165, edges=23667394
+Read 1000000 edges...
+Read 2000000 edges...
+Read 3000000 edges...
+Read 4000000 edges...
+Read 5000000 edges...
+Read 6000000 edges...
+Read 7000000 edges...
+Read 8000000 edges...
+Read 9000000 edges...
+Read 10000000 edges...
+Read 11000000 edges...
+Read 12000000 edges...
+Read 13000000 edges...
+Read 14000000 edges...
+Read 15000000 edges...
+Read 16000000 edges...
+Read 17000000 edges...
+Read 18000000 edges...
+Read 19000000 edges...
+Read 20000000 edges...
+Read 21000000 edges...
+Read 22000000 edges...
+Read 23000000 edges...
+Graph loaded in 19.8299 seconds
+CSR graph built in 1.97577 seconds
+Running multithreaded BFS with 8 threads from 100 random vertices...
+Analyzing distances from vertex 892127 (1/100)
+Analyzing distances from vertex 830921 (2/100)
+Analyzing distances from vertex 990895 (3/100)
+Analyzing distances from vertex 2102968 (4/100)
+Analyzing distances from vertex 430633 (5/100)
+Analyzing distances from vertex 925069 (6/100)
+Analyzing distances from vertex 1575704 (7/100)
+Analyzing distances from vertex 791503 (8/100)
+Analyzing distances from vertex 844062 (9/100)
+Analyzing distances from vertex 1665828 (10/100)
+Analyzing distances from vertex 2108080 (11/100)
+Analyzing distances from vertex 2555008 (12/100)
+Analyzing distances from vertex 1705464 (13/100)
+Analyzing distances from vertex 1121758 (14/100)
+Analyzing distances from vertex 1629444 (15/100)
+Analyzing distances from vertex 302260 (16/100)
+Analyzing distances from vertex 513764 (17/100)
+Analyzing distances from vertex 300452 (18/100)
+Analyzing distances from vertex 36094 (19/100)
+Analyzing distances from vertex 2065080 (20/100)
+Analyzing distances from vertex 14055 (21/100)
+Analyzing distances from vertex 2833206 (22/100)
+Analyzing distances from vertex 158101 (23/100)
+Analyzing distances from vertex 959587 (24/100)
+Analyzing distances from vertex 1707328 (25/100)
+Analyzing distances from vertex 1657388 (26/100)
+Analyzing distances from vertex 2972315 (27/100)
+Analyzing distances from vertex 430700 (28/100)
+Analyzing distances from vertex 2625532 (29/100)
+Analyzing distances from vertex 2089091 (30/100)
+Analyzing distances from vertex 132739 (31/100)
+Analyzing distances from vertex 2807119 (32/100)
+Analyzing distances from vertex 2820843 (33/100)
+Analyzing distances from vertex 2969838 (34/100)
+Analyzing distances from vertex 2895732 (35/100)
+Analyzing distances from vertex 2684135 (36/100)
+Analyzing distances from vertex 480636 (37/100)
+Analyzing distances from vertex 2828890 (38/100)
+Analyzing distances from vertex 1923401 (39/100)
+Analyzing distances from vertex 1343246 (40/100)
+Analyzing distances from vertex 2702626 (41/100)
+Analyzing distances from vertex 2894864 (42/100)
+Analyzing distances from vertex 781015 (43/100)
+Analyzing distances from vertex 224718 (44/100)
+Analyzing distances from vertex 217818 (45/100)
+Analyzing distances from vertex 2186910 (46/100)
+Analyzing distances from vertex 1012199 (47/100)
+Analyzing distances from vertex 682261 (48/100)
+Analyzing distances from vertex 1279231 (49/100)
+Analyzing distances from vertex 2032362 (50/100)
+Analyzing distances from vertex 183365 (51/100)
+Analyzing distances from vertex 1548825 (52/100)
+Analyzing distances from vertex 1195018 (53/100)
+Analyzing distances from vertex 202541 (54/100)
+Analyzing distances from vertex 1830938 (55/100)
+Analyzing distances from vertex 1431856 (56/100)
+Analyzing distances from vertex 2857499 (57/100)
+Analyzing distances from vertex 1049350 (58/100)
+Analyzing distances from vertex 2057837 (59/100)
+Analyzing distances from vertex 1340850 (60/100)
+Analyzing distances from vertex 1853330 (61/100)
+Analyzing distances from vertex 392833 (62/100)
+Analyzing distances from vertex 1413757 (63/100)
+Analyzing distances from vertex 841881 (64/100)
+Analyzing distances from vertex 2907734 (65/100)
+Analyzing distances from vertex 2569211 (66/100)
+Analyzing distances from vertex 656958 (67/100)
+Analyzing distances from vertex 2009996 (68/100)
+Analyzing distances from vertex 987341 (69/100)
+Analyzing distances from vertex 575083 (70/100)
+Analyzing distances from vertex 2735515 (71/100)
+Analyzing distances from vertex 11782 (72/100)
+Analyzing distances from vertex 722428 (73/100)
+Analyzing distances from vertex 285977 (74/100)
+Analyzing distances from vertex 1508562 (75/100)
+Analyzing distances from vertex 1768821 (76/100)
+Analyzing distances from vertex 611333 (77/100)
+Analyzing distances from vertex 1269430 (78/100)
+Analyzing distances from vertex 184844 (79/100)
+Analyzing distances from vertex 3084249 (80/100)
+Analyzing distances from vertex 2228722 (81/100)
+Analyzing distances from vertex 824344 (82/100)
+Analyzing distances from vertex 849184 (83/100)
+Analyzing distances from vertex 234229 (84/100)
+Analyzing distances from vertex 534283 (85/100)
+Analyzing distances from vertex 1812442 (86/100)
+Analyzing distances from vertex 855821 (87/100)
+Analyzing distances from vertex 657783 (88/100)
+Analyzing distances from vertex 3008420 (89/100)
+Analyzing distances from vertex 2767467 (90/100)
+Analyzing distances from vertex 1543382 (91/100)
+Analyzing distances from vertex 1363944 (92/100)
+Analyzing distances from vertex 2871018 (93/100)
+Analyzing distances from vertex 1730855 (94/100)
+Analyzing distances from vertex 463270 (95/100)
+Analyzing distances from vertex 1070189 (96/100)
+Analyzing distances from vertex 2682471 (97/100)
+Analyzing distances from vertex 1114468 (98/100)
+Analyzing distances from vertex 1270816 (99/100)
+Analyzing distances from vertex 908186 (100/100)
+BFS analysis completed in 81.655 seconds
+
+Distance distribution in social graph:
+  Distance          Count        Percent
+----------------------------------------
+         0            100           0.00%
+         1           1652           0.00%
+         2         198759           0.06%
+         3        6433102           2.08%
+         4       62976487          20.33%
+         5      138103931          44.59%
+         6       88670858          28.63%
+         7       12918791           4.17%
+         8         408040           0.13%
+         9           4722           0.00%
+        10             57           0.00%
+        11              1           0.00%
+
+Six degrees of separation analysis:
+Total paths: 309716500
+Paths with length <= 6: 296384889 (95.70%)
+Unreachable vertices: 0
+Average distance: 5.13
+
+Results saved in six_handshakes/data/ directory

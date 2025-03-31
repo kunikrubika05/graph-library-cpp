@@ -86,6 +86,11 @@ add_executable(run_parallel_dijkstra tests/tests_parallel_dijkstra/test_parallel
 add_executable(run_parallel_page_rank_base tests/tests_parallel_page_rank/test_parallel_page_rank.cpp)
 add_executable(run_parallel_page_rank_optimized tests/tests_parallel_page_rank/test_parallel_page_rank_optimized.cpp)
 
+#
+add_executable(run_page_rank_web_google include/graph/parallel_algorithms/page_rank/page_rank_web_google.cpp)
+add_executable(run_soc six_handshakes/soc_distance_analysis.cpp)
+#
+
 #structure tests
 target_link_libraries(run_dir_adj_list PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 target_link_libraries(run_un_dir_adj_list PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
@@ -162,6 +167,11 @@ target_link_libraries(run_parallel_dijkstra PRIVATE graph_analysis GTest::GTest 
 target_link_libraries(run_parallel_page_rank_base PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 target_link_libraries(run_parallel_page_rank_optimized PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 
+#
+target_link_libraries(run_page_rank_web_google PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_soc PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+#
+
 #structure tests
 add_test(NAME dir_adj_list COMMAND run_un_dir_adj_list)
 add_test(NAME un_dir_adj_list COMMAND run_un_dir_adj_list)
@@ -237,3 +247,8 @@ add_test(NAME parallel_dijkstra COMMAND run_parallel_dijkstra)
 #parallel page rank tests
 add_test(NAME parallel_page_rank_base COMMAND run_parallel_page_rank_base)
 add_test(NAME parallel_page_rank_optimized COMMAND run_parallel_page_rank_optimized)
+
+#
+add_test(NAME page_rank_web_google COMMAND run_page_rank_web_google)
+add_test(NAME soc COMMAND run_soc)
+#
