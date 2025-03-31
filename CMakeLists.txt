@@ -75,6 +75,17 @@ add_executable(run_matching_kuhn tests/tests_matching/test_kuhn.cpp)
 add_executable(run_matching_hopcroft_karp tests/tests_matching/test_hopcroft_karp.cpp)
 add_executable(run_matching_edmonds tests/tests_matching/test_edmonds.cpp)
 
+#parallel bfs tests
+add_executable(run_parallel_bfs tests/tests_parallel_bfs/test_parallel_bfs.cpp)
+add_executable(run_parallel_components tests/tests_parallel_bfs/test_parallel_components.cpp)
+
+#parallel dijkstra tests
+add_executable(run_parallel_dijkstra tests/tests_parallel_dijkstra/test_parallel_dijkstra.cpp)
+
+#parallel page rank tests
+add_executable(run_parallel_page_rank_base tests/tests_parallel_page_rank/test_parallel_page_rank.cpp)
+add_executable(run_parallel_page_rank_optimized tests/tests_parallel_page_rank/test_parallel_page_rank_optimized.cpp)
+
 #structure tests
 target_link_libraries(run_dir_adj_list PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 target_link_libraries(run_un_dir_adj_list PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
@@ -140,6 +151,17 @@ target_link_libraries(run_matching_kuhn PRIVATE graph_analysis GTest::GTest GTes
 target_link_libraries(run_matching_hopcroft_karp PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 target_link_libraries(run_matching_edmonds PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 
+#parallel bfs tests
+target_link_libraries(run_parallel_bfs PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_parallel_components PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+
+#parallel dijkstra tests
+target_link_libraries(run_parallel_dijkstra PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+
+#parallel page rank tests
+target_link_libraries(run_parallel_page_rank_base PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+target_link_libraries(run_parallel_page_rank_optimized PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
+
 #structure tests
 add_test(NAME dir_adj_list COMMAND run_un_dir_adj_list)
 add_test(NAME un_dir_adj_list COMMAND run_un_dir_adj_list)
@@ -204,3 +226,14 @@ add_test(NAME flow_dinic COMMAND run_flow_dinic)
 add_test(NAME matching_kuhn COMMAND run_matching_kuhn)
 add_test(NAME matching_hopcroft_karp COMMAND run_matching_hopcroft_karp)
 add_test(NAME matching_edmonds COMMAND run_matching_edmonds)
+
+#parallel bfs tests
+add_test(NAME parallel_bfs COMMAND run_parallel_bfs)
+add_test(NAME parallel_components COMMAND run_parallel_components)
+
+#parallel dijkstra tests
+add_test(NAME parallel_dijkstra COMMAND run_parallel_dijkstra)
+
+#parallel page rank tests
+add_test(NAME parallel_page_rank_base COMMAND run_parallel_page_rank_base)
+add_test(NAME parallel_page_rank_optimized COMMAND run_parallel_page_rank_optimized)

@@ -1,0 +1,113 @@
+#pragma once
+
+#include <atomic>
+#include <cmath>
+#include <functional>
+#include <mutex>
+#include <numeric>
+#include <thread>
+#include <vector>
+
+namespace graph {
+namespace parallel_algorithms {
+
+template <typename Graph>
+class ParallelPageRank {
+ public:
+  ParallelPageRank(const Graph& graph,
+                   size_t num_threads = std::thread::hardware_concurrency())
+      : graph_(graph), num_threads_(num_threads) {}
+
+  std::vector<double> compute(double damping_factor = 0.85,
+                              double tolerance = 1e-6,
+                              int max_iterations = 100) {
+    const size_t vertex_count = graph_.getVertexCount();
+
+    std::vector<double> current_ranks(vertex_count, 1.0 / vertex_count);
+    std::vector<double> next_ranks(vertex_count, 0.0);
+
+    std::vector<std::thread> threads;
+    const size_t block_size = vertex_count / num_threads_;
+
+    double diff = tolerance + 1.0;
+    int iterations = 0;
+
+    while (diff > tolerance && iterations < max_iterations) {
+      std::fill(next_ranks.begin(), next_ranks.end(), 0.0);
+
+      threads.clear();
+      for (size_t t = 0; t < num_threads_; ++t) {
+        size_t start_idx = t * block_size;
+        size_t end_idx =
+            (t == num_threads_ - 1) ? vertex_count : (t + 1) * block_size;
+
+        threads.emplace_back(&ParallelPageRank::computeIteration, this,
+                             std::ref(current_ranks), std::ref(next_ranks),
+                             damping_factor, start_idx, end_idx);
+      }
+
+      for (auto& thread : threads) {
+        thread.join();
+      }
+
+      diff = computeDifference(current_ranks, next_ranks);
+
+      std::swap(current_ranks, next_ranks);
+
+      ++iterations;
+    }
+
+    normalizeRanks(current_ranks);
+
+    return current_ranks;
+  }
+
+ private:
+  const Graph& graph_;
+  size_t num_threads_;
+
+  void computeIteration(std::vector<double>& current_ranks,
+                        std::vector<double>& next_ranks, double damping_factor,
+                        size_t start_idx, size_t end_idx) {
+    const size_t vertex_count = graph_.getVertexCount();
+    const double base_rank = (1.0 - damping_factor) / vertex_count;
+
+    for (size_t i = start_idx; i < end_idx; ++i) {
+      double sum = 0.0;
+
+      for (size_t j = 0; j < vertex_count; ++j) {
+        auto neighbors = graph_.getNeighbors(j);
+        if (std::find(neighbors.begin(), neighbors.end(), i) !=
+            neighbors.end()) {
+          double out_degree = neighbors.size();
+          if (out_degree > 0) {
+            sum += current_ranks[j] / out_degree;
+          }
+        }
+      }
+
+      next_ranks[i] = base_rank + damping_factor * sum;
+    }
+  }
+
+  double computeDifference(const std::vector<double>& prev_ranks,
+                           const std::vector<double>& curr_ranks) {
+    double diff = 0.0;
+    for (size_t i = 0; i < prev_ranks.size(); ++i) {
+      diff += std::abs(prev_ranks[i] - curr_ranks[i]);
+    }
+    return diff;
+  }
+
+  void normalizeRanks(std::vector<double>& ranks) {
+    double sum = std::accumulate(ranks.begin(), ranks.end(), 0.0);
+    if (sum > 0) {
+      for (auto& rank : ranks) {
+        rank /= sum;
+      }
+    }
+  }
+};
+
+}  // namespace parallel_algorithms
+}  // namespace graph

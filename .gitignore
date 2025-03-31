@@ -2,7 +2,6 @@
 /build/
 /cmake-build-*/
 .idea/
-/include/graph/parallel_algorithms/
 *.o
 *.obj
 CmakeCache.txt

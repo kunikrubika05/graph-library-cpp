@@ -9,11 +9,11 @@ namespace graph {
 namespace algorithms {
 
 template <typename Graph>
-class ConnectedComponents {
+class DFSConnectedComponents {
  public:
   using vertex_type = typename DepthFirstSearch<Graph>::vertex_type;
 
-  explicit ConnectedComponents(const Graph &graph) : graph_(graph) {}
+  explicit DFSConnectedComponents(const Graph &graph) : graph_(graph) {}
 
   std::vector<std::vector<vertex_type>> findAll() {
     std::vector<std::vector<vertex_type>> components;

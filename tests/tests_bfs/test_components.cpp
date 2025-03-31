@@ -13,7 +13,7 @@ TEST(ConnectedComponentsTest, SingleComponent) {
   graph.addVertex(1).addVertex(2).addVertex(3);
   graph.addEdge(1, 2, 1).addEdge(2, 3, 1);
 
-  ConnectedComponents<UndirectedAdjacencyList<int, int>> cc(graph);
+  BFSConnectedComponents<UndirectedAdjacencyList<int, int>> cc(graph);
   auto components = cc.computeComponents();
 
   EXPECT_EQ(components.size(), 1);
@@ -26,7 +26,7 @@ TEST(ConnectedComponentsTest, MultipleComponents) {
   graph.addEdge(1, 2, 1);
   graph.addEdge(3, 4, 1);
 
-  ConnectedComponents<UndirectedAdjacencyList<int, int>> cc(graph);
+  BFSConnectedComponents<UndirectedAdjacencyList<int, int>> cc(graph);
   auto components = cc.computeComponents();
 
   EXPECT_EQ(components.size(), 3);

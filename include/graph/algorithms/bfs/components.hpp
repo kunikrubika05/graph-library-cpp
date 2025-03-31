@@ -8,12 +8,12 @@ namespace graph {
 namespace algorithms {
 
 template <typename Graph>
-class ConnectedComponents {
+class BFSConnectedComponents {
  public:
   using vertex_type = std::remove_reference_t<
       decltype(*std::declval<Graph>().getVertices().begin())>;
 
-  explicit ConnectedComponents(const Graph &graph) : graph_(graph) {}
+  explicit BFSConnectedComponents(const Graph &graph) : graph_(graph) {}
 
   std::vector<std::vector<vertex_type>> computeComponents() {
     std::unordered_map<vertex_type, bool> visited;
