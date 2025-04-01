@@ -91,6 +91,10 @@ add_executable(run_page_rank_web_google include/graph/parallel_algorithms/page_r
 add_executable(run_soc six_handshakes/soc_distance_analysis.cpp)
 #
 
+#main.cpp
+add_executable(graph_main main.cpp)
+target_link_libraries(graph_main PRIVATE graph_analysis pthread)
+
 #structure tests
 target_link_libraries(run_dir_adj_list PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
 target_link_libraries(run_un_dir_adj_list PRIVATE graph_analysis GTest::GTest GTest::Main pthread)
